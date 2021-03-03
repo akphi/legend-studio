@@ -45,7 +45,7 @@ jobs:
           server-username: ${{ secrets.CI_DEPLOY_USERNAME }}
           server-password: ${{ secrets.CI_DEPLOY_PASSWORD }}
       - name: Setup Node
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: 14.x
       - name: Configure git
