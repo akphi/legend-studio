@@ -17,10 +17,13 @@
 <li><a href="_finos_legend_graph.InstanceValue.html">InstanceValue</a></li></ul>
 <h1>Class InstanceValue</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography"><p>NOTE: <a href="_finos_legend_graph.InstanceValue.html">InstanceValue</a> is the only metamodel available in Pure.
-Its subtypes are created in Studio so that we can narrow down the types of <code>values</code>.
-Also, right now, we haven&#39;t done the full build/transform flow for value specification
-we use the subtypes to make it easier to transform metamodel back into protocol.</p>
+<div class="tsd-comment tsd-typography"><p>NOTE: Theoretically <a href="_finos_legend_graph.InstanceValue.html">InstanceValue</a> is the only metamodel available in Pure.
+Its subtypes are created in Studio so that we can narrow down the types of <code>values</code>
+since we don&#39;t have powerful type matching like in Pure. Also, due to that, these
+subtypes of <a href="_finos_legend_graph.InstanceValue.html">InstanceValue</a>  make it easier to transform metamodel back into protocol.
+See <a href="https://github.com/finos/legend-engine/blob/94cd0aff3b314e568e830773f7200c8245baa09b/legend-engine-pure-code-compiled-core/src/main/resources/core/pure/protocol/vX_X_X/transfers/valueSpecification.pure#L254">https://github.com/finos/legend-engine/blob/94cd0aff3b314e568e830773f7200c8245baa09b/legend-engine-pure-code-compiled-core/src/main/resources/core/pure/protocol/vX_X_X/transfers/valueSpecification.pure#L254</a></p>
+
+<h3>Discrepancy</h3><p>model</p>
 </div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
@@ -48,13 +51,14 @@ we use the subtypes to make it easier to transform metamodel back into protocol.
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a id="genericType" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>generic<wbr/>Type</span><a href="#genericType" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
 <div class="tsd-signature">generic<wbr/>Type<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">GenericTypeReference</span></div>
-<div class="tsd-comment tsd-typography"><p>Currently, we don&#39;t do type-inferencing</p>
+<div class="tsd-comment tsd-typography"><p>NOTE: Currently, we don&#39;t do type-inferencing to the generic type
+here is left as optional</p>
 
 <h3>Discrepancy</h3><p>model</p>
 </div><aside class="tsd-sources">
 <p>Inherited from ValueSpecification.genericType</p>
 <ul>
-<li>Defined in <a href="https://github.com/akphi/legend-studio/blob/master/packages/legend-graph/src/graph/metamodel/pure/valueSpecification/ValueSpecification.ts#L89">packages/legend-graph/src/graph/metamodel/pure/valueSpecification/ValueSpecification.ts:89</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/akphi/legend-studio/blob/master/packages/legend-graph/src/graph/metamodel/pure/valueSpecification/ValueSpecification.ts#L73">packages/legend-graph/src/graph/metamodel/pure/valueSpecification/ValueSpecification.ts:73</a></li></ul></aside></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -75,9 +79,9 @@ we use the subtypes to make it easier to transform metamodel back into protocol.
 <ul>
 <li class="current"><a href="../modules.html">Legend <wbr/>Studio API <wbr/>Documentation</a>
 <ul>
-<li class="tsd-kind-module"><a href="../modules/_finos_legend_application.html">@finos/legend-<wbr/>application -<wbr/> v10.0.3</a></li>
-<li class="current tsd-kind-module"><a href="../modules/_finos_legend_graph.html">@finos/legend-<wbr/>graph -<wbr/> v19.2.0</a></li>
-<li class="tsd-kind-module"><a href="../modules/_finos_legend_query_builder.html">@finos/legend-<wbr/>query-<wbr/>builder -<wbr/> v0.3.1</a></li>
+<li class="tsd-kind-module"><a href="../modules/_finos_legend_application.html">@finos/legend-<wbr/>application -<wbr/> v10.0.5</a></li>
+<li class="current tsd-kind-module"><a href="../modules/_finos_legend_graph.html">@finos/legend-<wbr/>graph -<wbr/> v19.2.1</a></li>
+<li class="tsd-kind-module"><a href="../modules/_finos_legend_query_builder.html">@finos/legend-<wbr/>query-<wbr/>builder -<wbr/> v0.4.1</a></li>
 <li class="tsd-kind-module"><a href="../modules/_finos_legend_server_depot.html">@finos/legend-<wbr/>server-<wbr/>depot -<wbr/> v4.1.4</a></li>
 <li class="tsd-kind-module"><a href="../modules/_finos_legend_server_sdlc.html">@finos/legend-<wbr/>server-<wbr/>sdlc -<wbr/> v4.1.2</a></li>
 <li class="tsd-kind-module"><a href="../modules/_finos_legend_shared.html">@finos/legend-<wbr/>shared -<wbr/> v6.2.0</a></li>
