@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import { observer } from 'mobx-react-lite';
 import { DataCubeIcon } from '@finos/legend-art';
+import { observer } from 'mobx-react-lite';
 import { useREPLStore } from '../../REPLStoreProvider.js';
-import { DataCubeEditorColumnsSelector } from './DataCubeEditorColumnsSelector.js';
 
-export const DataCubeEditorSortsPanel = observer(() => {
+export const DataCubeEditorVPivotsPanel = observer(() => {
   const replStore = useREPLStore();
   const panel = replStore.dataCubeState.editor.sortsPanel;
 
@@ -27,15 +26,13 @@ export const DataCubeEditorSortsPanel = observer(() => {
     <div className="data-cube-column-selector h-full w-full p-2">
       <div className="flex h-6">
         <div className="flex h-6 items-center text-xl font-medium">
-          <DataCubeIcon.TableSort />
+          <DataCubeIcon.TableGroupBy />
         </div>
         <div className="ml-1 flex h-6 items-center text-xl font-medium">
-          Sorts
+          Vertical Pivots
         </div>
       </div>
-      <div className="flex h-[calc(100%_-_24px)] w-full">
-        <DataCubeEditorColumnsSelector selector={panel.columnsSelector} />
-      </div>
+      <div className="flex h-[calc(100%_-_24px)] w-full"></div>
     </div>
   );
 });

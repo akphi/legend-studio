@@ -16,7 +16,7 @@
 
 import { observer } from 'mobx-react-lite';
 import { flowResult } from 'mobx';
-import { PlayIcon, clsx } from '@finos/legend-art';
+import { DataCubeIcon, PlayIcon, clsx } from '@finos/legend-art';
 import { useRef, useEffect, useState, useMemo } from 'react';
 import {
   getBaseCodeEditorOptions,
@@ -159,7 +159,7 @@ const DataCubeCodeEditor = observer(() => {
   );
 });
 
-export const DataCubeQueryCodeEditor = observer(() => {
+export const DataCubeEditorCodePanel = observer(() => {
   const executeLambda = (): void => {
     // TODO: @akphi
     // flowResult(dataCubeState.executeLambda()).catch(
@@ -168,59 +168,70 @@ export const DataCubeQueryCodeEditor = observer(() => {
   };
 
   return (
-    <div className="repl__content__query">
-      <div className="repl__query">
-        <div className="repl__query__editor">
-          <div className="repl__query__header">
-            <div className="repl__query__label">Curent Query</div>
-            <div className="repl__query__execute-btn btn__dropdown-combo btn__dropdown-combo--primary">
-              <button
-                className="btn__dropdown-combo__label"
-                onClick={executeLambda}
-                tabIndex={-1}
-              >
-                <PlayIcon className="btn__dropdown-combo__label__icon" />
-                <div className="btn__dropdown-combo__label__title">
-                  Run Query
-                </div>
-              </button>
-            </div>
-          </div>
-          <div className="repl__query__content">
-            <DataCubeCodeEditor />
-          </div>
+    <div className="data-cube-column-selector h-full w-full p-2">
+      <div className="flex h-6">
+        <div className="flex h-6 items-center text-xl font-medium">
+          <DataCubeIcon.Code />
+        </div>
+        <div className="ml-1 flex h-6 items-center text-xl font-medium">
+          Code
         </div>
       </div>
-      {/* {dataCubeState.editor.codeEditorState.currentSubQuery !== undefined && (
-        <div className="repl__query">
-          <div className="repl__query__editor">
-            <div className="repl__query__header">
-              <div className="repl__query__label__sub__query">
-                Current Row Group Sub Query
-              </div>
-              <div className="repl__query__label__sub__query__read--only">
-                Read Only
-              </div>
-            </div>
-            <div className="repl__query__content">
-              <CodeEditor
-                lightTheme={
-                  isLightTheme
-                    ? CODE_EDITOR_THEME.BUILT_IN__VSCODE_HC_LIGHT
-                    : CODE_EDITOR_THEME.BUILT_IN__VSCODE_HC_BLACK
-                }
-                language={CODE_EDITOR_LANGUAGE.PURE}
-                isReadOnly={true}
-                inputValue={
-                  dataCubeState.editor.codeEditorState.currentSubQuery
-                }
-                hideActionBar={true}
-                hidePadding={true}
-              />
-            </div>
-          </div>
-        </div>
-      )} */}
+      <div className="flex h-[calc(100%_-_24px)] w-full"></div>
     </div>
+    // <div className="repl__content__query">
+    //   <div className="repl__query">
+    //     <div className="repl__query__editor">
+    //       <div className="repl__query__header">
+    //         <div className="repl__query__label">Curent Query</div>
+    //         <div className="repl__query__execute-btn btn__dropdown-combo btn__dropdown-combo--primary">
+    //           <button
+    //             className="btn__dropdown-combo__label"
+    //             onClick={executeLambda}
+    //             tabIndex={-1}
+    //           >
+    //             <PlayIcon className="btn__dropdown-combo__label__icon" />
+    //             <div className="btn__dropdown-combo__label__title">
+    //               Run Query
+    //             </div>
+    //           </button>
+    //         </div>
+    //       </div>
+    //       <div className="repl__query__content">
+    //         <DataCubeCodeEditor />
+    //       </div>
+    //     </div>
+    //   </div>
+    //   {/* {dataCubeState.editor.codeEditorState.currentSubQuery !== undefined && (
+    //     <div className="repl__query">
+    //       <div className="repl__query__editor">
+    //         <div className="repl__query__header">
+    //           <div className="repl__query__label__sub__query">
+    //             Current Row Group Sub Query
+    //           </div>
+    //           <div className="repl__query__label__sub__query__read--only">
+    //             Read Only
+    //           </div>
+    //         </div>
+    //         <div className="repl__query__content">
+    //           <CodeEditor
+    //             lightTheme={
+    //               isLightTheme
+    //                 ? CODE_EDITOR_THEME.BUILT_IN__VSCODE_HC_LIGHT
+    //                 : CODE_EDITOR_THEME.BUILT_IN__VSCODE_HC_BLACK
+    //             }
+    //             language={CODE_EDITOR_LANGUAGE.PURE}
+    //             isReadOnly={true}
+    //             inputValue={
+    //               dataCubeState.editor.codeEditorState.currentSubQuery
+    //             }
+    //             hideActionBar={true}
+    //             hidePadding={true}
+    //           />
+    //         </div>
+    //       </div>
+    //     </div>
+    //   )} */}
+    // </div>
   );
 });
