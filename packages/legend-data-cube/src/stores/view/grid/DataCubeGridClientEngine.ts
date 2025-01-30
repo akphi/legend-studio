@@ -419,6 +419,17 @@ export class DataCubeGridClientServerSideDataSource
       );
       const lambda = new V1_Lambda();
       lambda.body.push(executableQuery);
+      if (
+        this._view.settingService.getBooleanValue(
+          DataCubeSettingKey.DEBUGGER__ENABLE_DEBUG_MODE,
+        )
+      ) {
+        this._view.engine.debugProcess(
+          `Execution Plan`,
+          ['Query', lambda],
+          ['Config', `pagination=${this._grid.isPaginationEnabled}`],
+        );
+      }
       const result = await this._view.engine.executeQuery(
         lambda,
         this._view.source,
@@ -442,7 +453,6 @@ export class DataCubeGridClientServerSideDataSource
         this._view.engine.debugProcess(
           `Execution`,
           ['Query', result.executedQuery],
-          ['Config', `pagination=${this._grid.isPaginationEnabled}`],
           [
             'Stats',
             `${rowData.length} rows, ${result.result.result.columns.length} columns`,

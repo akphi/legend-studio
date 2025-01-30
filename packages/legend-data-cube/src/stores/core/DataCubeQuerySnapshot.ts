@@ -185,4 +185,15 @@ export class DataCubeQuerySnapshot {
     clone._hashCode = this._hashCode;
     return clone;
   }
+
+  serialize() {
+    const clone = this.clone();
+    return {
+      uuid: clone.uuid,
+      data: clone.data,
+      _isPatchChange: clone._isPatchChange,
+      _finalized: clone._finalized,
+      _hashCode: clone._hashCode,
+    };
+  }
 }
