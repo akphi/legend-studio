@@ -279,7 +279,9 @@ export abstract class DataCubeEngine {
     return undefined;
   }
 
-  async disposeCache(source: CachedDataCubeSource) {}
+  async disposeCache(source: CachedDataCubeSource) {
+    // do nothing
+  }
 
   // ---------------------------------- APPLICATION ----------------------------------
 
